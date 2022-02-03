@@ -1,0 +1,18 @@
+{
+    "roaster": [
+        { "employee_id": 201101, "employee_name": "Zara", "employee_phnno": 7980876654, "employee_address": "bangalore", "employee_pincode": 25001 },
+        { "employee_id": 201101, "employee_name": "Zoya", "employee_phnno": 45678900987, "employee_address": "Kerala", "employee_pincode": 25002 },
+        { "employee_id": 201101, "employee_name": "Shikha", "employee_phnno": 23456709987, "employee_address": "Lucknow", "employee_pincode": 25034 },
+        { "employee_id": 201101, "employee_name": "Amyra", "employee_phnno": 9808766540, "employee_address": "bangalore", "employee_pincode": 25001 },
+        { "employee_id": 201101, "employee_name": "Shourya", "employee_phnno": 9808766540, "employee_address": "bangalore", "employee_pincode": 25001 },
+        { "employee_id": 201101, "employee_name": "Kabir", "employee_phnno": 9808766540, "employee_address": "Delhi", "employee_pincode": 25003 },
+        { "employee_id": 201101, "employee_name": "Sheryar", "employee_phnno": 9808766540, "employee_address": "Goa", "employee_pincode": 25001 },
+        { "employee_id": 201101, "employee_name": "MUstzab", "employee_phnno": 9808766540, "employee_address": "chennai", "employee_pincode": 25005 },
+        { "employee_id": 201101, "employee_name": "Sunny", "employee_phnno": 9808766540, "employee_address": "Lahore", "employee_pincode": 35008 },
+        { "employee_id": 201101, "employee_name": "Sandeep", "employee_phnno": 9808766540, "employee_address": "Agara", "employee_pincode": 25007 },
+        { "employee_id": 201101, "employee_name": "Krishna", "employee_phnno": 9808766540, "employee_address": "bangalore", "employee_pincode": 25001 },
+        { "employee_id": 201101, "employee_name": "Shipra", "employee_phnno": 9808766540, "employee_address": "bangalore", "employee_pincode": 25001 },
+        { "employee_id": 201101, "employee_name": "Akarshi", "employee_phnno": 9808766540, "employee_address": "bangalore", "employee_pincode": 25001 },
+        { "employee_id": 201101, "employee_name": "Priya", "employee_phnno": 9808766540, "employee_address": "bangalore", "employee_pincode": 25001 }
+    ]
+}
