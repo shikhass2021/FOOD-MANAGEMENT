@@ -1,42 +1,165 @@
 <!DOCTYPE html>
-<html ng-app="myapp" ng-controller="myctrl">
+<!--ng-app directive tells AngularJS that myApp
+	is the root element of the application -->
+<html ng-app="myApp">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
-    <script src="spa.js"></script>
-    <link href="styleeee.css" rel="stylesheet" />
+    <!--import the angularjs libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js">
+    </script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <table style="font-family: 'Times New Roman', Times, serif">
-        <tr>
-            <td colspan="2" class="header">
-                <h1>
-                    FOOD ORDERING SYSTEM
-                </h1>
-            </td>
-        </tr>
-        <tr>
-            <td class="leftMenu">
-                <a href="#/HOME">HOME</a>
-                <a href="#/MENU">MENU</a>
-                <a href="#/ORDER">ORDER DETAILS</a>
-            </td>
-            <td class="mainContent">
-                <ng-view></ng-view>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" class="footer">
-                <b>www.foodordering.in</b>
-            </td>
-        </tr>
-    </table>
+    <style>
+        a {
+            color: white;
+            background-color: black;
+            font-size: 30px;
+        }
+    </style>
+    <!--hg-template indicates the pages
+			that get loaded as per requirement-->
+    <div class="row">
+        <script type="text/ng-template" id="about.html">
+            <br>
+            <h1 style="color:red;text-align:center">FOOD ORDERING</h1>
+            <h2 style="color:black;text-align:center" class="form-control col-8">
+                FOODIE
+            </h2>
+            <img src="https://static.onecms.io/wp-content/uploads/sites/44/2021/02/17/header_3.png" style="width:1550px">
+            <br>
+            <h1 style="text-align:center">ABOUT US</h1>
+            <p class="responsive" style="font:25px timesnewroman;text-align:center"><br>{{message}}</p>
+        </script>
+        <!--
+            second controller 
+        -->
+        <script type="text/ng-template" id="menu.html">
+            <div style="text-align: center;font-family: timesnewroman;font-size: 40px">ORDER DETAILS</div>
+
+            <div class="row">
+                <table class="table table-striped">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">
+
+                            </th>
+                            <th scope="col">EMP_Name<br>
+
+                            </th>
+                            <th scope="col">EMP_ID<br>
+
+                            </th>
+                            <th scope="col">PHONE_NO<br>
+
+                            </th>
+                            <th scope="col">ADDRESS<br>
+
+                            </th>
+                            <th scope="col">PIN<br>
+
+                            </th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+            </div>
+            <tr ng-repeat="item in names">
+                <td></td>
+                <td>{{item.employee_id|uppercase}}</td>
+                <td>{{item.employee_name}}</td>
+                <td>{{item.employee_phnno}}</td>
+                <td>{{item.employee_address|uppercase}}</td>
+                <td>{{item.employee_pincode}}</td>
+
+            </tr>
+
+            </tbody>
+            </table>
+
+        </script>
+        <!--
+            third controller
+        -->
+        <script type="text/ng-template" id="resto.html">
+            <div style="text-align: center;font-family: timesnewroman;font-size: 40px">RESTO DETAILS</div>
+            <div class="row form-group" style="text-align: center">
+                <div class="col-4"></div>
+                <div class="col-4">Search<br><input class="form-control" type="text" placeholder="Search " ng-model="find"></div>
+                <div class="col-4"></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-5"></div>
+                <div class="col-5"></div>
+            </div>
+            <div class="row">
+                <table class="table table-striped">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">
+                                <div>
+                                    ROWS :<br><input type="number" ng-model="rowlimit">
+
+                                </div>
+                            </th>
+                            <th scope="col">employee_id<br>
+                                <input type="text" ng-model="search.employee_id">
+                            </th>
+                            <th scope="col">employee_name<br>
+                                <input type="text" ng-model="search.employee_name">
+                            </th>
+                            <th scope="col">employee_phnno<br>
+                                <input type="text" ng-model="search.employee_phnno">
+                            </th>
+                            <th scope="col">employee_address<br>
+                                <input type="text" ng-model="search.employee_address">
+                            </th>
+                            <th scope="col">employee_pincode<br>
+                                <input type="text" ng-model="search.employee_pincode">
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+            </div>
+            <tr ng-repeat="item in names|filter:search|filter:find |filter:find2 |limitTo:rowlimit | orderBy:'-price'">
+                <td></td>
+                <td>{{item.employee_id|uppercase}}</td>
+                <td>{{item.employee_name}}</td>
+                <td>{{item.employee_phnno}}</td>
+                <td>{{item.employee_address|uppercase}}</td>
+                <td>{{item.employee_pincode}}</td>
+            </tr>
+            </tr>
+
+            </tbody>
+            </table>
+        </script>
+    </div>
+    <!--hyperlinks to load different
+			pages dynamically-->
+    <div class="row" style="text-align: center;font: 30px;color: white; background-color: black;">
+        <div class="col-4">
+            <a href="#/about">ABOUT US</a>
+        </div>
+        <div class="col-4">
+            <a href="#/menu">Menu</a>
+
+        </div>
+        <div class="col-4">
+            <a href="#/resto">RESTO DETAILS</a>
+        </div>
+    </div>
+
+    <div ng-view></div>
+    <script type="text/javascript" src="foode.js"></script>
 </body>
 
 </html>
